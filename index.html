@@ -24,7 +24,7 @@
     <a href="#contato">Contato</a>
   </nav>
 
-  <a class="btn-header" href="https://wa.me/5500000000000" target="_blank">WhatsApp</a>
+  <a class="btn-header" href="https://wa.me/1433357075" target="_blank">WhatsApp</a>
 </header>
 
 <section class="hero">
@@ -36,7 +36,7 @@
       Atendimento jurídico com seriedade, estratégia e acompanhamento próximo em causas criminais, cíveis, trabalhistas e previdenciárias.
     </p>
     <div class="hero-buttons">
-      <a href="https://wa.me/5500000000000" target="_blank" class="btn-primary">Agendar consulta</a>
+      <a href="https://wa.me/1433357075" target="_blank" class="btn-primary">Agendar consulta</a>
       <a href="#atuacao" class="btn-secondary">Conhecer atuação</a>
     </div>
   </div>
@@ -120,21 +120,46 @@
     <p>Preencha os dados ou entre em contato diretamente pelo WhatsApp.</p>
   </div>
 
-  <form>
-    <input type="text" placeholder="Seu nome">
-    <input type="email" placeholder="Seu e-mail">
-    <input type="text" placeholder="Telefone">
-    <textarea placeholder="Conte brevemente seu caso"></textarea>
-    <button type="button">Enviar mensagem</button>
-  </form>
+  <form onsubmit="enviarWhatsApp(event)">
+  <input id="nome" type="text" placeholder="Seu nome" required>
+  <input id="email" type="email" placeholder="Seu e-mail" required>
+  <input id="telefone" type="text" placeholder="Telefone" required>
+  <textarea id="mensagem" placeholder="Conte brevemente seu caso" required></textarea>
+  <button type="submit">Enviar mensagem</button>
+</form>
 </section>
 
-<a class="whatsapp" href="https://wa.me/5500000000000" target="_blank">WhatsApp</a>
+<a class="whatsapp" href="https://wa.me/1433357075" target="_blank">WhatsApp</a>
 
 <footer>
   <strong>Marcos Rosa Advogados</strong>
   <p>© 2026 - Todos os direitos reservados.</p>
 </footer>
+
+<script>
+  function enviarWhatsApp(event) {
+    event.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    const telefone = document.getElementById("telefone").value;
+    const mensagem = document.getElementById("mensagem").value;
+
+    const numeroWhatsApp = "1433357075";
+
+    const texto =
+      `Olá, gostaria de atendimento jurídico.%0A%0A` +
+      `Nome: ${nome}%0A` +
+      `E-mail: ${email}%0A` +
+      `Telefone: ${telefone}%0A` +
+      `Mensagem: ${mensagem}`;
+
+    window.open(
+      `https://wa.me/${numeroWhatsApp}?text=${texto}`,
+      "_blank"
+    );
+  }
+</script>
 
 </body>
 </html>
