@@ -39,6 +39,12 @@ a {
   align-items: center;
 }
 
+.logo img {
+    height: 70px;
+    width: auto;
+    margin-right: 12px;
+}
+
 .logo span {
   width: 46px;
   height: 46px;
@@ -357,4 +363,21 @@ footer strong {
   height: 450px;
   display: block;
 }
+}
+.social-top{
+    display:flex;
+    align-items:center;
+    gap:25px; /* distância entre Instagram e Facebook */
+    margin-left:px; /* afasta do menu */
+}
+
+.social-top a{
+    color:#c9a45c;
+    font-size:32px; /* aumenta os ícones */
+    transition:0.3s;
+}
+
+.social-top a:hover{
+    color:#ffffff;
+    transform:scale(1.15);
 }
